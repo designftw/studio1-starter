@@ -19,7 +19,16 @@ let app = createApp({
 
 		deleteItem(i) {
 			this.tasks.splice(i, 1);
-			this.tasks[i-1].active = true;
+
+			if (this.tasks[i-1]) {
+				this.tasks[i-1].active = true;
+			}
+		},
+
+		deleteItemIfEmpty(i) {
+			if (this.tasks[i].title === "") {
+				this.deleteItem(i);
+			}
 		},
 
 		clearCompleted () {
