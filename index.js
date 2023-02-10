@@ -27,3 +27,6 @@ let app = createApp({
 		}
 	}
 }, "#app");
+
+// For debugging
+globalThis.app = app;
