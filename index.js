@@ -2,7 +2,13 @@ import { createApp, Vue } from "https://mavue.mavo.io/mavue.js";
 
 let app = createApp({
 	data: {
-		tasks: [{}]
+		tasks: [
+			{
+				done: false,
+				task: "",
+				active: true,
+			}
+		]
 	},
 
 	methods: {
