@@ -43,7 +43,9 @@ const app = createApp({
       }
     },
   },
-}).mount("#app");
+})
+  .directive("focus", { mounted: (e) => e.focus() })
+  .mount("#app");
 
 // so you can run app.addItem() and app.tasks[0] in the console
 window.app = app;
