@@ -1,6 +1,6 @@
 import { createApp } from "vue";
 
-createApp({
+const app = createApp({
   template: "#template",
 
   data() {
@@ -44,3 +44,6 @@ createApp({
     },
   },
 }).mount("#app");
+
+// so you can run app.addItem() and app.tasks[0] in the console
+window.app = app;
