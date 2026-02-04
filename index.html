@@ -1,14 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-
-<meta charset="UTF-8">
-<title>Yet Another To-Do List</title>
-<script src="index.js" type="module"></script>
-</head>
-<body>
-	<div id="app">
-
-	</div>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Yet Another To-Do List</title>
+        <script type="importmap">
+            {
+                "imports": {
+                    "vue": "https://cdn.jsdelivr.net/npm/vue/dist/vue.esm-browser.js"
+                }
+            }
+        </script>
+        <script src="index.js" type="module"></script>
+    </head>
+    <body>
+        <div id="app"></div>
+        <template id="template">
+            <h1>Your TODO List here!</h1>
+        </template>
+    </body>
 </html>

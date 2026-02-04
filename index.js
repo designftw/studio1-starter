@@ -1,46 +1,46 @@
-import { createApp, Vue } from "https://mavue.mavo.io/mavue.js";
+import { createApp } from "vue";
 
-let app = createApp({
-	data: {
-		tasks: [
-			{
-				done: false,
-				title: "",
-				active: true,
-			}
-		]
-	},
+createApp({
+  template: "#template",
 
-	methods: {
-		addItem() {
-			this.tasks.push({});
+  data() {
+    return {
+      tasks: [
+        {
+          done: false,
+          title: "",
+          active: true,
+        },
+      ],
+    };
+  },
 
-			this.setActive();
-		},
+  methods: {
+    addItem() {
+      this.tasks.push({});
 
-		deleteItem(i) {
-			this.tasks.splice(i, 1);
-			this.setActive(i - 1);
-		},
+      this.setActive();
+    },
 
-		clearCompleted () {
-			this.tasks = this.tasks.filter(task => !task.done);
-		},
+    deleteItem(i) {
+      this.tasks.splice(i, 1);
+      this.setActive(i - 1);
+    },
 
-		setActive(i) {
-			for (let task of this.tasks) {
-				task.active = false;
-			}
+    clearCompleted() {
+      this.tasks = this.tasks.filter((task) => !task.done);
+    },
 
-			if (i >= 0 && this.tasks[i]) {
-				this.tasks[i].active = true;
-			}
-			else if (this.tasks.length > 0) {
-				this.tasks.at(-1).active = true;
-			}
-		},
-	}
-}, "#app");
+    setActive(i) {
+      for (let task of this.tasks) {
+        task.active = false;
+      }
 
-// For debugging
-globalThis.app = app;
+      if (i >= 0 && this.tasks[i]) {
+        this.tasks[i].active = true;
+      } else if (this.tasks.length > 0) {
+        this.tasks.at(-1).active = true;
+      }
+    },
+  },
+}).mount("#app");
